@@ -1,3 +1,17 @@
+
+### Table of Contents
+
+1. [Overview of the Code](https://eu-de.dataplatform.cloud.ibm.com/wx/prompts?context=wx&project_id=79dd9808-6381-480c-bf56-08d07270adee&grounding_index=6035fd2b-9aa8-4e20-9c76-9c66a0a3b4f6#overview-of-the-code)
+2. [Step 1: Importing Libraries](https://eu-de.dataplatform.cloud.ibm.com/wx/prompts?context=wx&project_id=79dd9808-6381-480c-bf56-08d07270adee&grounding_index=6035fd2b-9aa8-4e20-9c76-9c66a0a3b4f6#step-1-importing-libraries)
+3. [Step 2: Loading Environment Variables](https://eu-de.dataplatform.cloud.ibm.com/wx/prompts?context=wx&project_id=79dd9808-6381-480c-bf56-08d07270adee&grounding_index=6035fd2b-9aa8-4e20-9c76-9c66a0a3b4f6#step-2-loading-environment-variables)
+4. [Step 3: API Key Management](https://eu-de.dataplatform.cloud.ibm.com/wx/prompts?context=wx&project_id=79dd9808-6381-480c-bf56-08d07270adee&grounding_index=6035fd2b-9aa8-4e20-9c76-9c66a0a3b4f6#step-3-api-key-management)
+5. [Step 4: Checking API Key Availability](https://eu-de.dataplatform.cloud.ibm.com/wx/prompts?context=wx&project_id=79dd9808-6381-480c-bf56-08d07270adee&grounding_index=6035fd2b-9aa8-4e20-9c76-9c66a0a3b4f6#step-4-checking-api-key-availability)
+6. [Step 5: Initializing Groq Client](https://eu-de.dataplatform.cloud.ibm.com/wx/prompts?context=wx&project_id=79dd9808-6381-480c-bf56-08d07270adee&grounding_index=6035fd2b-9aa8-4e20-9c76-9c66a0a3b4f6#step-5-initializing-groq-client)
+7. [Step 6: Defining the Chatbot Class](https://eu-de.dataplatform.cloud.ibm.com/wx/prompts?context=wx&project_id=79dd9808-6381-480c-bf56-08d07270adee&grounding_index=6035fd2b-9aa8-4e20-9c76-9c66a0a3b4f6#step-6-defining-the-chatbot-class)
+8. [Step 7: Defining the get_assistant_response Method](https://eu-de.dataplatform.cloud.ibm.com/wx/prompts?context=wx&project_id=79dd9808-6381-480c-bf56-08d07270adee&grounding_index=6035fd2b-9aa8-4e20-9c76-9c66a0a3b4f6#step-7-defining-the-get_assistant_response-method)
+9. [Step 8: Defining the main Function](https://eu-de.dataplatform.cloud.ibm.com/wx/prompts?context=wx&project_id=79dd9808-6381-480c-bf56-08d07270adee&grounding_index=6035fd2b-9aa8-4e20-9c76-9c66a0a3b4f6#step-8-defining-the-main-function)
+10. [Step 9: Running the main Function](https://eu-de.dataplatform.cloud.ibm.com/wx/prompts?context=wx&project_id=79dd9808-6381-480c-bf56-08d07270adee&grounding_index=6035fd2b-9aa8-4e20-9c76-9c66a0a3b4f6#step-9-running-the-main-function)
+
 # Overview of the Code
 
 The provided code is a simple implementation of a chatbot using the Groq API. It allows users to interact with the chatbot by providing input, and the chatbot responds accordingly.
@@ -28,6 +42,8 @@ The `load_dotenv()` function is used to load environment variables from a `.e
 
 ## Step 3: API Key Management
 
+### Retrieving the API Key
+
 ```python
 try: 
     groq_api_key = os.environ.get("GROQ_API_KEY")
@@ -42,7 +58,7 @@ The code attempts to retrieve the Groq API key from the environment variables. I
 
 ```python
 if not groq_api_key:
-    print("GROQ_API_KEY is not set! Please set it in your environment variables.")
+    print("GROQ_API_KEY is not set! Please set it in your environment variables or Streamlit secrets.")
     exit()
 ```
 
@@ -67,6 +83,12 @@ class Chatbot:
 A `Chatbot` class is defined to manage the chatbot's state. The `__init__` method initializes an empty list to store the chatbot's messages.
 
 ## Step 7: Defining the get_assistant_response Method
+
+### Method Overview
+
+The `get_assistant_response` method is used to get the chatbot's response to a given prompt.
+
+### Method Implementation
 
 ```python
 def get_assistant_response(self, prompt):
@@ -106,7 +128,7 @@ def get_assistant_response(self, prompt):
         return response
 ```
 
-The `get_assistant_response` method is used to get the chatbot's response to a given prompt. It:
+The method:
 
 - Appends the user's prompt to the chatbot's message list
 - Creates a streaming chat completion using the Groq API
@@ -147,3 +169,14 @@ if __name__ == "__main__":
 ```
 
 The `main` function is called when the script is run directly (i.e., not imported as a module).
+
+### Example Use Cases
+
+- The chatbot can be used to provide customer support or answer frequently asked questions.
+- The chatbot can be integrated with other services, such as messaging platforms or voice assistants, to provide a more seamless user experience.
+
+### Advice
+
+- Make sure to handle errors and exceptions properly to ensure the chatbot remains stable and functional.
+- Consider implementing additional features, such as user authentication or conversation history, to enhance the chatbot's capabilities.
+
