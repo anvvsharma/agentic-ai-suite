@@ -42,7 +42,7 @@ The code attempts to retrieve the Groq API key from the environment variables. I
 
 ```python
 if not groq_api_key:
-    print("GROQ_API_KEY is not set! Please set it in your environment variables or Streamlit secrets.")
+    print("GROQ_API_KEY is not set! Please set it in your environment variables.")
     exit()
 ```
 
