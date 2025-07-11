@@ -4,12 +4,12 @@ from groq import Groq
 from dotenv import load_dotenv
 
 # Set page configuration
-st.set_page_config(page_title="Groq Chat", page_icon="⚡")
+st.set_page_config(page_title="Simple Chatbot", page_icon="⚡")
 load_dotenv()
 
 # --- Page Title and Description
 st.title("⚡ Groq Chat")
-st.caption("A siple and blazing fast chatbot powered by Groq and LLaMA3.")
+st.caption("A Simple and blazing fast chatbot powered by Groq and LLaMA3.")
 
 # --- API Key Management ---
 # Try to get the API key from Streamlit secrets
