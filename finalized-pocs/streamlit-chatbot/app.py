@@ -84,5 +84,5 @@ if prompt := st.chat_input("what is up?"):
             st.error(f"An error occured : {e}", icon="🚨")
             response = "Sorry, I encountered an error." # Fallback response
 
-    # 4. Add assistant's response to session state
-    #st.session_state.messages.append({"role": "assistant", "content": response})
+    # Add assistant's response to session state
+    st.session_state.messages.append({"role": "assistant", "content": response})
