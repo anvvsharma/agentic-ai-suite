@@ -15,7 +15,7 @@ except Exception as e:
 
 # Check if the API key is available
 if not groq_api_key:
-    print("GROQ_API_KEY is not set! Please set it in your environment variables or Streamlit secrets.")
+    print("GROQ_API_KEY is not set! Please set it in your environment variables.")
     exit()
 
 # --- Initialize Groq Client ---
