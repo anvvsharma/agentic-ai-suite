@@ -1,3 +1,4 @@
+```md
 **Agentic AI Folder Structure**
 
 **agentic-ai-suite**/
@@ -25,3 +26,4 @@
 ├── README.md
 ├── requirements.txt
 └── run.sh
+```
