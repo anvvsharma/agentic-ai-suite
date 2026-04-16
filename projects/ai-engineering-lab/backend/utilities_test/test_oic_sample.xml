@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<integration name="SalesOrderCreate" version="1.0">
+    <description>Sample integration for testing</description>
+    
+    <!-- Connection without proper naming -->
+    <connection name="ERPConnection" type="REST">
+        <endpoint>http://api.example.com/orders</endpoint>
+        <authentication>
+            <password>admin123</password>
+            <apiKey>hardcoded-key-12345</apiKey>
+        </authentication>
+    </connection>
+    
+    <!-- Lookup without proper suffix -->
+    <lookup name="StatusCodes">
+        <entry key="NEW" value="01"/>
+        <entry key="PROCESSED" value="02"/>
+    </lookup>
+    
+    <!-- Main process flow -->
+    <process>
+        <!-- Scope without fault handler -->
+        <scope name="validateInput">
+            <assign name="SetVariables">
+                <copy>
+                    <from>$input/orderId</from>
+                    <to>$orderId</to>
+                </copy>
+            </assign>
+            
+            <!-- Log with sensitive data -->
+            <log level="INFO">
+                Processing order with credit card: 1234567812345678
+                Password: secret123
+            </log>
+        </scope>
+        
+        <!-- Scope with external call but no fault handler -->
+        <scope name="callERPSystem">
+            <invoke partnerLink="ERPService" operation="createOrder">
+                <inputVariable>$orderRequest</inputVariable>
+                <outputVariable>$orderResponse</outputVariable>
+            </invoke>
+        </scope>
+        
+        <!-- Loop without iteration limit -->
+        <scope name="processLineItems">
+            <for-each>
+                <source>$orderRequest/lineItems</source>
+                <target>$currentItem</target>
+                <sequence>
+                    <invoke partnerLink="InventoryService" operation="checkStock">
+                        <inputVariable>$currentItem</inputVariable>
+                    </invoke>
+                </sequence>
+            </for-each>
+        </scope>
+        
+        <!-- Scope with fault handler but no retry -->
+        <scope name="updateDatabase">
+            <invoke partnerLink="DatabaseService" operation="insert">
+                <inputVariable>$orderData</inputVariable>
+            </invoke>
+            <faultHandlers>
+                <catch faultName="DatabaseError">
+                    <log level="ERROR">Database error occurred</log>
+                </catch>
+            </faultHandlers>
+        </scope>
+        
+        <!-- Multiple transformations suggesting reusability -->
+        <transform name="MapOrderToERP">
+            <source>$orderRequest</source>
+            <target>$erpRequest</target>
+        </transform>
+        
+        <transform name="MapResponseToOutput">
+            <source>$erpResponse</source>
+            <target>$output</target>
+        </transform>
+        
+        <transform name="MapErrorToOutput">
+            <source>$error</source>
+            <target>$errorOutput</target>
+        </transform>
+        
+        <transform name="MapStatusToOutput">
+            <source>$status</source>
+            <target>$statusOutput</target>
+        </transform>
+    </process>
+    
+    <!-- No global fault handler -->
+</integration>
+
