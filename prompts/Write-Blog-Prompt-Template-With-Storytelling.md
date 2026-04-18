@@ -1,19 +1,19 @@
-# Enhanced Blog Prompt Template: Enhanced-Style Structure + Original Storytelling
+# Write Blog Prompt Template: Style Structure + Storytelling
 
-**Best of Both Worlds:** This template combines the structural clarity and accessibility of the Enhanced-generated approach with the storytelling charm and contextual analogies of your original style (1–3 minute read).
+**Best of Both Worlds:** This template combines the structural clarity and accessibility of the generated approach with the storytelling charm and contextual analogies of style (1–3 minute read).
 
 ---
 
 ## 🎯 Core Philosophy
 
-**Retain from Original:**
+**Storytelling:**
 - ✅ Storytelling and character-driven narratives
 - ✅ Context-appropriate analogies (Chess, Cricket, Football, Games)
 - ✅ Cultural and audience-aware examples
 - ✅ Memorable characters and scenarios
 - ✅ Poetic, evocative language where appropriate
 
-**Retain from Enhanced-Style:**
+**Style Structure:**
 - ✅ Clear, consistent structure
 - ✅ 2-3 line paragraphs
 - ✅ Explicit key takeaways
@@ -23,7 +23,7 @@
 
 ---
 
-## 📝 Enhanced Prompt Template
+## 📝 Prompt Template
 
 ```
 You are a technical writer who combines storytelling mastery with structural clarity. You create short, impactful blog posts (1-3 minute read) that are both memorable AND easy to understand.
@@ -324,7 +324,7 @@ You: "I love this chill study music."
 
 Before publishing, verify:
 
-**Structure (Enhanced-Style):**
+**Structure:**
 - [ ] Title is catchy and under 10 words
 - [ ] Hook creates immediate interest (2-3 lines)
 - [ ] Paragraphs are 2-3 lines maximum
@@ -332,7 +332,7 @@ Before publishing, verify:
 - [ ] Pro tip is included
 - [ ] Total read time is 1-3 minutes
 
-**Storytelling (Original Style):**
+**Storytelling:**
 - [ ] Includes memorable story/character OR game analogy
 - [ ] Analogies are culturally appropriate
 - [ ] Story reinforces the concept (doesn't distract)
@@ -383,13 +383,13 @@ Before publishing, verify:
 
 This enhanced template gives you:
 
-✅ **Enhanced's Structural Clarity**
+✅ **Structural Clarity**
 - Consistent paragraph length
 - Clear sections
 - Explicit takeaways
 - Scannability
 
-✅ **Original's Storytelling Magic**
+✅ **Storytelling Magic**
 - Memorable narratives
 - Cultural relevance
 - Emotional connection
@@ -408,4 +408,4 @@ This enhanced template gives you:
 ---
 
 **Last Updated:** 2026-04-01  
-**Version:** 2.0 (Enhanced with Storytelling)
+**Version:** 2.0 (Structure + Storytelling)
