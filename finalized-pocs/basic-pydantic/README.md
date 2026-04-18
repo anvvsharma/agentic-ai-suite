@@ -68,10 +68,10 @@
     $ conda env list 
 
 ### Displays the list of conda environments:
-                    * /anvvsharma/agenticai/day01
-                    /Agentic-AI-2/day3-pydant/venv
-base                /opt/miniconda3
-agentic_2_base      /opt/miniconda3/envs/agentic_2_base
+    *   /anvvsharma/agenticai/day01
+        /Agentic-AI-2/day3-pydant/venv
+        base    /opt/miniconda3
+        agentic_2_base  /opt/miniconda3/envs/agentic_2_base
 
 
 ### Verify Python 3.11 env with version command
